@@ -13,18 +13,18 @@
         </div>
     @endif
     
-    <form action="{{ route('admin.posts.store') }}" method="post">
+    <form action="{{ route('admin.posts.update', ['post' => $post->id]) }}" method="post">
         @csrf
-        @method('POST')
+        @method('PUT')
 
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="{{ old('title') }}">
+            <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="{{ old('title', $post->title) }}">
         </div>
 
         <div class="mb-3">
             <label for="content" class="form-label">Content</label>
-            <textarea class="form-control" name="content" id="content" placeholder="Content" cols="30" rows="10">{{ old('content') }}</textarea>
+            <textarea class="form-control" name="content" id="content" placeholder="Content" cols="30" rows="10">{{ old('content', $post->content) }}</textarea>
         </div>
         
         <button type="submit" class="btn btn-primary">Submit</button>
