@@ -2,6 +2,6 @@
 
 @section('content')
     
-    <h1>Ciao sono la dashboard</h1>
+    <h1>Benvenuto {{ Auth::user()->name }} nella dashboard</h1>
 
 @endsection
