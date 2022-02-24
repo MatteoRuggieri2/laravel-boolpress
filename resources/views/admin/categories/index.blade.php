@@ -8,7 +8,7 @@
     <div class="list-group">
         
         @forelse ($categories as $category)
-            <a href="#" class="list-group-item list-group-item-action">{{ $category->name }}</a>
+            <a href="{{ route('admin.single_category', ['slug' => $category->slug]) }}" class="list-group-item list-group-item-action">{{ $category->name }}</a>
         @empty
             Non ci sono categorie
         @endforelse

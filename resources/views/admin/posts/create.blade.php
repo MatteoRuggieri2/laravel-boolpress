@@ -37,7 +37,7 @@
             <textarea class="form-control" name="content" id="content" placeholder="Content" cols="30" rows="10">{{ old('content') }}</textarea>
         </div>
         
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Crea post</button>
     </form>
 
 @endsection
