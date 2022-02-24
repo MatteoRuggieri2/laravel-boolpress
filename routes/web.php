@@ -22,6 +22,7 @@ Route::middleware('auth')
     ->group(function() {
         Route::get('/', 'HomeController@index')->name('home');
         Route::resource('posts', 'PostController');
+        Route::get('/categories', 'CategoryController@index')->name('categories');
     });
 
 Route::get('{any?}', function() {
