@@ -55,9 +55,10 @@ class PostController extends Controller
         // Creo uno slug univoco
         $new_post->slug = $this->getUniqueSlugFromTitle($new_post->title);
 
-        dd($form_data);
-
         $new_post->save();
+
+        // Save tags
+        $new_post->tags()->sync($form_data['tags']);
 
         return redirect()->route('admin.posts.show', ['post' => $new_post->id]);
     }
