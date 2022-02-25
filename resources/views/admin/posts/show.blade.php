@@ -12,7 +12,7 @@
                 @forelse ($post->tags as $tag)
                     <a href="#" class="badge rounded-pill bg-light text-dark">{{ $tag->name }}</a>
                 @empty
-                    Nessuno
+                    nessuno
                 @endforelse
             </h5>
             <p class="card-text">{{ $post->content }}</p>
