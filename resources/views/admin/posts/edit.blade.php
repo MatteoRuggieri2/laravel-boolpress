@@ -13,16 +13,19 @@
         </div>
     @endif
     
+    {{-- Form --}}
     <form action="{{ route('admin.posts.update', ['post' => $post->id]) }}" method="post">
         @csrf
         @method('PUT')
 
+        {{-- Title --}}
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="{{ old('title', $post->title) }}">
         </div>
 
-        <div>
+        {{-- Categories --}}
+        <div class="mb-3">
             <label for="category_id" class="form-label">Categoria</label>
             <select class="form-select" id="category_id" name="category_id">
                 <option value="">Nessuna</option>
@@ -32,6 +35,7 @@
             </select>
         </div>
 
+        {{-- Content --}}
         <div class="mb-3">
             <label for="content" class="form-label">Content</label>
             <textarea class="form-control" name="content" id="content" placeholder="Content" cols="30" rows="10">{{ old('content', $post->content) }}</textarea>

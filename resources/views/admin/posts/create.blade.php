@@ -13,16 +13,19 @@
         </div>
     @endif
     
+    {{-- Form --}}
     <form action="{{ route('admin.posts.store') }}" method="post">
         @csrf
         @method('POST')
 
+        {{-- Title --}}
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="{{ old('title') }}">
         </div>
 
-        <div>
+        {{-- Categories --}}
+        <div class="mb-3">
             <label for="category_id" class="form-label">Categoria</label>
             <select class="form-select" id="category_id" name="category_id">
                 <option value="">Nessuna</option>
@@ -32,6 +35,18 @@
             </select>
         </div>
 
+        {{-- Tags --}}
+        <div class="mb-3">
+            <span>Tags</span>
+            @foreach ($tags as $tag)
+                <div class="form-check">
+                    <input class="form-check-input" name="tags[]" type="checkbox" value="{{ $tag->name }}" id="tag-{{ $tag->id }}">
+                    <label class="form-check-label" for="tag-{{ $tag->id }}">{{ $tag->name }}</label>
+                </div>
+            @endforeach
+        </div>
+
+        {{-- Content --}}
         <div class="mb-3">
             <label for="content" class="form-label">Content</label>
             <textarea class="form-control" name="content" id="content" placeholder="Content" cols="30" rows="10">{{ old('content') }}</textarea>
