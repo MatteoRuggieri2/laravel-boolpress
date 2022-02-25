@@ -69,7 +69,6 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
 
         $category = $post->category;
-        // dd($category->posts);
 
         return view('admin.posts.show', compact('post'));
     }
