@@ -129,7 +129,9 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post_to_delete = Post::findOrFail($id);
+        $post_to_delete->tags()->sync([]);
         $post_to_delete->delete();
+
         return redirect()->route('admin.posts.index');
     }
 
