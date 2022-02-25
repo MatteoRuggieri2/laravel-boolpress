@@ -12,7 +12,13 @@
                     {{-- <img src="..." class="card-img-top" alt="..."> --}}
                     <div class="card-body">
                         <h5 class="card-title">{{ $post->title }}</h5>
-                        <p class="card-text">{{ Str::substr($post->content, 0, 120) }}...</p>
+                        <p class="card-text">
+                            @if ( strlen($post->content) > 120)
+                                {{ Str::substr($post->content, 0, 120) }}...
+                            @else
+                                {{ $post->content }}
+                            @endif
+                        </p>
                         <a href="{{ route('admin.posts.show', ['post' => $post->id]) }}" class="btn btn-primary">Vai al post</a>
                     </div>
                 </div>
