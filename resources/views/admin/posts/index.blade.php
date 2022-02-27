@@ -28,6 +28,8 @@
             <span>Non sono presenti post</span>
         @endforelse
 
+        {{ $posts->links() }}
+
     </div>
 
 @endsection
