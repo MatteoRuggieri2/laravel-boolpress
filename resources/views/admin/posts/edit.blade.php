@@ -35,6 +35,29 @@
             </select>
         </div>
 
+        {{-- Tags --}}
+        <div class="mb-3">
+            <span>Tags</span>
+            @foreach ($tags as $tag)
+                <div class="form-check">
+
+                    {{-- GESTIONE CHECKBOX
+                    Se ci sono errori di validazione vuol dire che l'utente ha 
+                    modificato il form, quindi metto 'checked' in base a 
+                    ciò che si trova nella funzione "old", altrimenti metto 
+                    quelli scelti in precedenza (es. alla creazione del post).
+                    --}}
+                    @if ($errors->any())
+                        <input {{ in_array($tag->id, old('tags', [])) ? 'checked' : '' }} class="form-check-input" name="tags[]" type="checkbox" value="{{ $tag->id }}" id="tag-{{ $tag->id }}">
+                    @else
+                        <input {{ $post_tags->contains($tag) ? 'checked' : '' }} class="form-check-input" name="tags[]" type="checkbox" value="{{ $tag->id }}" id="tag-{{ $tag->id }}">
+                    @endif
+
+                    <label class="form-check-label" for="tag-{{ $tag->id }}">{{ $tag->name }}</label>
+                </div>
+            @endforeach
+        </div>
+
         {{-- Content --}}
         <div class="mb-3">
             <label for="content" class="form-label">Content</label>

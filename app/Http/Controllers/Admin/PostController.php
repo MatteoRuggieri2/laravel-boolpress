@@ -90,8 +90,10 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
         $categories = Category::all();
+        $tags = Tag::all();
+        $post_tags = $post->tags;
 
-        return view('admin.posts.edit', compact('post', 'categories'));
+        return view('admin.posts.edit', compact('post', 'categories', 'tags', 'post_tags'));
     }
 
     /**
@@ -116,6 +118,14 @@ class PostController extends Controller
         }
 
         $post_to_update->update($form_data);
+
+        // Se la chiave tags è presente li aggiorno,
+        // se non è presente vuol dire che nessun tag è stato selezionato.
+        if (isset($form_data['tags'])) {
+            $post_to_update->tags()->sync($form_data['tags']);
+        } else {
+            $post_to_update->tags()->sync([]);
+        }
 
         return redirect()->route('admin.posts.show', ['post' => $post_to_update->id]);
     }
