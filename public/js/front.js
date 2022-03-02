@@ -1948,12 +1948,28 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    /*
+    Questa funzione effettua una chiamata API e prende i post derivanti dal database
+    */
     getPosts: function getPosts() {
       var _this = this;
 
       axios.get('http://127.0.0.1:8000/api/posts').then(function (response) {
         _this.posts = response.data.results;
       });
+    },
+
+    /*
+    Questa funzione serve a tagliare una stringa dopo un numero di caratteri.
+    arguments:  string-> La stringa da controllare
+                stringLength-> La lunghezza desiderata della stringa finale.
+    */
+    stringTroncate: function stringTroncate(string, stringLength) {
+      if (string.length > stringLength) {
+        return string.slice(0, stringLength) + '...';
+      }
+
+      return string;
     }
   },
   created: function created() {
@@ -2488,7 +2504,7 @@ var render = function () {
                 ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "card-text" }, [
-                  _vm._v(_vm._s(post.content)),
+                  _vm._v(_vm._s(_vm.stringTroncate(post.content, 110))),
                 ]),
               ]),
               _vm._v(" "),
