@@ -30,13 +30,13 @@
             <nav>
                 <ul class="pagination">
 
-                    <li class="page-item" :class="{ 'disabled': currentPage == 1 }">
+                    <li class="page-item" :class="{ 'disabled' : currentPage == 1 }">
                         <a @click="getPosts(currentPage - 1)" class="page-link" href="#">Previous</a>
                     </li>
 
-                    <!-- <li class="page-item">
-                        <a class="page-link" href="#">1</a>
-                    </li> -->
+                    <li v-for="n in lastPage" :key="n" class="page-item" :class="{ 'active' : currentPage == n }">
+                        <a @click="getPosts(n)" class="page-link" href="#">{{ n }}</a>
+                    </li>
 
                     <li class="page-item" :class="{ 'disabled': currentPage == lastPage }">
                         <a @click="getPosts(currentPage + 1)" class="page-link" href="#">Next</a>
