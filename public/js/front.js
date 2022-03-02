@@ -2555,10 +2555,9 @@ var render = function () {
               },
               [
                 _c(
-                  "a",
+                  "button",
                   {
                     staticClass: "page-link",
-                    attrs: { href: "#" },
                     on: {
                       click: function ($event) {
                         return _vm.getPosts(_vm.currentPage - 1)
@@ -2580,10 +2579,9 @@ var render = function () {
                 },
                 [
                   _c(
-                    "a",
+                    "button",
                     {
                       staticClass: "page-link",
-                      attrs: { href: "#" },
                       on: {
                         click: function ($event) {
                           return _vm.getPosts(n)
@@ -2604,10 +2602,9 @@ var render = function () {
               },
               [
                 _c(
-                  "a",
+                  "button",
                   {
                     staticClass: "page-link",
-                    attrs: { href: "#" },
                     on: {
                       click: function ($event) {
                         return _vm.getPosts(_vm.currentPage + 1)

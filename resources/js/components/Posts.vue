@@ -31,15 +31,15 @@
                 <ul class="pagination">
 
                     <li class="page-item" :class="{ 'disabled' : currentPage == 1 }">
-                        <a @click="getPosts(currentPage - 1)" class="page-link" href="#">Previous</a>
+                        <button @click="getPosts(currentPage - 1)" class="page-link">Previous</button>
                     </li>
 
                     <li v-for="n in lastPage" :key="n" class="page-item" :class="{ 'active' : currentPage == n }">
-                        <a @click="getPosts(n)" class="page-link" href="#">{{ n }}</a>
+                        <button @click="getPosts(n)" class="page-link">{{ n }}</button>
                     </li>
 
                     <li class="page-item" :class="{ 'disabled': currentPage == lastPage }">
-                        <a @click="getPosts(currentPage + 1)" class="page-link" href="#">Next</a>
+                        <button @click="getPosts(currentPage + 1)" class="page-link">Next</button>
                     </li>
 
                 </ul>
