@@ -1904,9 +1904,62 @@ module.exports = {
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Posts.vue?vue&type=script&lang=js& ***!
   \****************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\resources\\js\\components\\Posts.vue: Unexpected token, expected \"{\" (25:18)\n\n\u001b[0m \u001b[90m 23 |\u001b[39m     }\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 24 |\u001b[39m     create\u001b[33m:\u001b[39m {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 25 |\u001b[39m         getPosts()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 26 |\u001b[39m     }\u001b[0m\n\u001b[0m \u001b[90m 27 |\u001b[39m }\u001b[0m\n\u001b[0m \u001b[90m 28 |\u001b[39m\u001b[0m\n    at Parser._raise (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:476:17)\n    at Parser.raiseWithData (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:469:17)\n    at Parser.raise (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:430:17)\n    at Parser.unexpected (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:3789:16)\n    at Parser.expect (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:3773:28)\n    at Parser.parseBlock (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:14708:10)\n    at Parser.parseFunctionBody (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:13440:24)\n    at Parser.parseFunctionBodyAndFinish (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:13424:10)\n    at Parser.parseMethod (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:13374:10)\n    at Parser.parseObjectMethod (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:13250:19)\n    at Parser.parseObjPropValue (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:13291:23)\n    at Parser.parsePropertyDefinition (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:13208:10)\n    at Parser.parseObjectLike (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:13099:21)\n    at Parser.parseExprAtom (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:12498:23)\n    at Parser.parseExprSubscripts (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:12149:23)\n    at Parser.parseUpdate (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:12129:21)\n    at Parser.parseMaybeUnary (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:12104:23)\n    at Parser.parseMaybeUnaryOrPrivate (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:11901:61)\n    at Parser.parseExprOps (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:11908:23)\n    at Parser.parseMaybeConditional (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:11878:23)\n    at Parser.parseMaybeAssign (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:11833:21)\n    at C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:11791:39\n    at Parser.allowInAnd (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:13823:12)\n    at Parser.parseMaybeAssignAllowIn (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:11791:17)\n    at Parser.parseObjectProperty (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:13258:101)\n    at Parser.parseObjPropValue (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:13291:100)\n    at Parser.parsePropertyDefinition (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:13208:10)\n    at Parser.parseObjectLike (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:13099:21)\n    at Parser.parseExprAtom (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:12498:23)\n    at Parser.parseExprSubscripts (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:12149:23)\n    at Parser.parseUpdate (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:12129:21)\n    at Parser.parseMaybeUnary (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:12104:23)\n    at Parser.parseMaybeUnaryOrPrivate (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:11901:61)\n    at Parser.parseExprOps (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:11908:23)\n    at Parser.parseMaybeConditional (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:11878:23)\n    at Parser.parseMaybeAssign (C:\\Users\\Giuseppe\\Classe#48\\repository\\laravel-boolpress\\node_modules\\@babel\\parser\\lib\\index.js:11833:21)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'Posts',
+  data: function data() {
+    return {
+      posts: []
+    };
+  },
+  methods: {
+    getPosts: function getPosts() {
+      var _this = this;
+
+      axios.get('http://127.0.0.1:8000/api/posts').then(function (response) {
+        _this.posts = response.data.results;
+      });
+    }
+  },
+  created: function created() {
+    this.getPosts();
+  }
+});
 
 /***/ }),
 
@@ -2419,14 +2472,45 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("section", [
+    _c("div", { staticClass: "container" }, [
+      _c("h1", { staticClass: "mt-5 mb-4" }, [_vm._v("Lista dei post")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "row row-cols-3" },
+        _vm._l(_vm.posts, function (post) {
+          return _c("div", { key: post.id, staticClass: "col" }, [
+            _c("div", { staticClass: "card mb-4" }, [
+              _c("div", { staticClass: "card-body" }, [
+                _c("h5", { staticClass: "card-title" }, [
+                  _vm._v(_vm._s(post.title)),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "card-text" }, [
+                  _vm._v(_vm._s(post.content)),
+                ]),
+              ]),
+              _vm._v(" "),
+              _vm._m(0, true),
+            ]),
+          ])
+        }),
+        0
+      ),
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", [_c("h1", [_vm._v("Lista dei post")])])
+    return _c("div", { staticClass: "card-body" }, [
+      _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
+        _vm._v("Vai al post"),
+      ]),
+    ])
   },
 ]
 render._withStripped = true
@@ -14641,14 +14725,15 @@ module.exports = g;
 /*!*******************************************!*\
   !*** ./resources/js/components/Posts.vue ***!
   \*******************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Posts_vue_vue_type_template_id_4ac4d2f8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Posts.vue?vue&type=template&id=4ac4d2f8& */ "./resources/js/components/Posts.vue?vue&type=template&id=4ac4d2f8&");
 /* harmony import */ var _Posts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Posts.vue?vue&type=script&lang=js& */ "./resources/js/components/Posts.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Posts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Posts_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -14678,7 +14763,7 @@ component.options.__file = "resources/js/components/Posts.vue"
 /*!********************************************************************!*\
   !*** ./resources/js/components/Posts.vue?vue&type=script&lang=js& ***!
   \********************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

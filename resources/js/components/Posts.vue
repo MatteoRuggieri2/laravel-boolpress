@@ -1,6 +1,32 @@
 <template>
     <section>
-        <h1>Lista dei post</h1>
+        <div class="container">
+
+            <!-- Posts List -->
+            <h1 class="mt-5 mb-4">Lista dei post</h1>
+            <div class="row row-cols-3">
+
+                <!-- Single Post -->
+                <div v-for="post in posts" :key="post.id" class="col">
+                    
+                    <div class="card mb-4">
+                        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                        <div class="card-body">
+                            <h5 class="card-title">{{ post.title }}</h5>
+                            <p class="card-text">{{ post.content }}</p>
+                        </div>
+                        <!-- <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Cras justo odio</li>
+                        </ul> -->
+                        <div class="card-body">
+                            <a href="#" class="card-link">Vai al post</a>
+                            <!-- <a href="#" class="card-link">Another link</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </section>
 </template>
 
@@ -10,19 +36,18 @@ export default {
     data: function() {
         return {
             posts: [],
-        }
+        };
     },
     methods: {
-        getPosts() {
+        getPosts: function() {
             axios.get('http://127.0.0.1:8000/api/posts')
-            .then(function(response) {
-                // this.posts = response;
-                console.log(response);
+            .then((response) => {
+                this.posts = response.data.results;
             });
         }
     },
-    create: {
-        getPosts();
+    created: function() {
+        this.getPosts();
     }
 }
 </script>
