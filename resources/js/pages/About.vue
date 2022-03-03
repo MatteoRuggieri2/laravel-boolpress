@@ -1,11 +1,11 @@
 <template>
     <div class="container">
-        <h1>Ciao sono la Homepage!</h1>
+        <h1>Leggi Chi Siamo</h1>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Home',
+    name: 'About'
 }
 </script>
