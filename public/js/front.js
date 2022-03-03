@@ -1926,14 +1926,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Header',
   data: function data() {
     return {
-      currentRoute: null,
       pagesRoutes: [{
         name: 'home',
         label: 'Home'
@@ -1945,13 +1941,6 @@ __webpack_require__.r(__webpack_exports__);
         label: 'Blog'
       }]
     };
-  },
-  methods: {
-    // Questa funzione ritorna la rotta attuale.
-    getCurrentRoute: function getCurrentRoute() {
-      this.currentRoute = this.$router.history.current;
-      console.log(this.currentRoute);
-    }
   }
 });
 
@@ -2687,41 +2676,24 @@ var render = function () {
             _c(
               "ul",
               { staticClass: "navbar-nav" },
-              [
-                _vm._l(_vm.pagesRoutes, function (route, index) {
-                  return _c(
-                    "li",
-                    { key: index, staticClass: "nav-item active" },
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          staticClass: "nav-link",
-                          attrs: { to: { name: route.name } },
-                        },
-                        [_vm._v(_vm._s(route.label))]
-                      ),
-                    ],
-                    1
-                  )
-                }),
-                _vm._v(" "),
-                _c("li", { staticClass: "nav-item" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "nav-link",
-                      on: {
-                        click: function ($event) {
-                          return _vm.getCurrentRoute()
-                        },
+              _vm._l(_vm.pagesRoutes, function (route, index) {
+                return _c(
+                  "li",
+                  { key: index, staticClass: "nav-item" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "nav-link",
+                        attrs: { to: { name: route.name } },
                       },
-                    },
-                    [_vm._v("console.log")]
-                  ),
-                ]),
-              ],
-              2
+                      [_vm._v(_vm._s(route.label))]
+                    ),
+                  ],
+                  1
+                )
+              }),
+              0
             ),
           ]
         ),
