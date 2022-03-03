@@ -1926,14 +1926,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Header'
+  name: 'Header',
+  data: function data() {
+    return {
+      pagesRoutes: [{
+        name: 'home',
+        label: 'Home'
+      }, {
+        name: 'about',
+        label: 'About'
+      }, {
+        name: 'blog',
+        label: 'Blog'
+      }]
+    };
+  }
 });
 
 /***/ }),
@@ -2530,55 +2538,28 @@ var render = function () {
             attrs: { id: "navbarNav" },
           },
           [
-            _c("ul", { staticClass: "navbar-nav" }, [
-              _c(
-                "li",
-                { staticClass: "nav-item active" },
-                [
-                  _c(
-                    "router-link",
-                    {
-                      staticClass: "nav-link",
-                      attrs: { to: { name: "home" } },
-                    },
-                    [_vm._v("Home")]
-                  ),
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                { staticClass: "nav-item" },
-                [
-                  _c(
-                    "router-link",
-                    {
-                      staticClass: "nav-link",
-                      attrs: { to: { name: "about" } },
-                    },
-                    [_vm._v("Chi Siamo")]
-                  ),
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                { staticClass: "nav-item" },
-                [
-                  _c(
-                    "router-link",
-                    {
-                      staticClass: "nav-link",
-                      attrs: { to: { name: "blog" } },
-                    },
-                    [_vm._v("Blog")]
-                  ),
-                ],
-                1
-              ),
-            ]),
+            _c(
+              "ul",
+              { staticClass: "navbar-nav" },
+              _vm._l(_vm.pagesRoutes, function (route, index) {
+                return _c(
+                  "li",
+                  { key: index, staticClass: "nav-item" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "nav-link",
+                        attrs: { to: { name: route.name } },
+                      },
+                      [_vm._v(_vm._s(route.label))]
+                    ),
+                  ],
+                  1
+                )
+              }),
+              0
+            ),
           ]
         ),
       ]

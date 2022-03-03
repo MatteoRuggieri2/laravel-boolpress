@@ -6,14 +6,8 @@
             <a class="navbar-brand" href="#">BOOLPRESS</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <router-link :to="{ name: 'home'}" class="nav-link">Home</router-link>
-                    </li>
-                    <li class="nav-item">
-                        <router-link :to="{ name: 'about'}" class="nav-link">Chi Siamo</router-link>
-                    </li>
-                    <li class="nav-item">
-                        <router-link :to="{ name: 'blog'}" class="nav-link">Blog</router-link>
+                    <li v-for="(route, index) in pagesRoutes" :key="index" class="nav-item">
+                        <router-link :to="{ name: route.name}" class="nav-link">{{ route.label }}</router-link>
                     </li>
                 </ul>
             </div>
@@ -24,6 +18,24 @@
 
 <script>
 export default {
-    name: 'Header'
+    name: 'Header',
+    data: function() {
+        return {
+            pagesRoutes: [
+                {
+                    name: 'home',
+                    label: 'Home'
+                },
+                {
+                    name: 'about',
+                    label: 'About'
+                },
+                {
+                    name: 'blog',
+                    label: 'Blog'
+                }
+            ]
+        }
+    }
 }
 </script>
