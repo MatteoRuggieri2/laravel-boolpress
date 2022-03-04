@@ -10,7 +10,7 @@
             <h3 v-if="post.category">Categoria: {{ post.category.name }}</h3>
             
             <!-- Tag badges -->
-            <h5 v-if="post.tags.length > 0">
+            <h5 v-if="post.tags && post.tags.length > 0">
                 <span>Tags: </span>
                 <a v-for="tag in post.tags" :key="tag.id" href="#" class="badge rounded-pill bg-light text-dark">{{ tag.name }}</a>
             </h5>
@@ -29,7 +29,7 @@ export default {
     name: 'PostDetails',
     data: function() {
         return {
-            post: false
+            post: {}
         };
     },
     methods: {
