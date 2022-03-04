@@ -19,7 +19,8 @@
                             <li class="list-group-item">Cras justo odio</li>
                         </ul> -->
                         <div class="card-body">
-                            <a href="#" class="card-link">Vai al post</a>
+                            <!-- <a href="#" class="card-link">Vai al post</a> -->
+                            <router-link :to="{ name: 'post-details', params: { slug: post.slug } }" class="card-link">Vai al post</router-link>
                             <!-- <a href="#" class="card-link">Another link</a> -->
                         </div>
                     </div>
@@ -65,7 +66,7 @@ export default {
         Questa funzione effettua una chiamata API e prende i post derivanti dal database
         */
         getPosts: function(pageNumber) {
-            axios.get('http://127.0.0.1:8000/api/posts', {
+            axios.get('/api/posts', {
                 params: {
                     page: pageNumber
                 }

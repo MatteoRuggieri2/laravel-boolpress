@@ -2006,6 +2006,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Posts',
   data: function data() {
@@ -2022,7 +2023,7 @@ __webpack_require__.r(__webpack_exports__);
     getPosts: function getPosts(pageNumber) {
       var _this = this;
 
-      axios.get('http://127.0.0.1:8000/api/posts', {
+      axios.get('/api/posts', {
         params: {
           page: pageNumber
         }
@@ -2159,8 +2160,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'PostDetails'
+  name: 'PostDetails',
+  data: function data() {
+    return {
+      post: false
+    };
+  },
+  methods: {
+    getPost: function getPost() {
+      var _this = this;
+
+      axios.get('/api/posts/' + this.$route.params.slug).then(function (response) {
+        _this.post = response.data.results;
+      });
+    }
+  },
+  created: function created() {
+    this.getPost();
+  }
 });
 
 /***/ }),
@@ -2764,7 +2783,26 @@ var render = function () {
                 ]),
               ]),
               _vm._v(" "),
-              _vm._m(0, true),
+              _c(
+                "div",
+                { staticClass: "card-body" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "card-link",
+                      attrs: {
+                        to: {
+                          name: "post-details",
+                          params: { slug: post.slug },
+                        },
+                      },
+                    },
+                    [_vm._v("Vai al post")]
+                  ),
+                ],
+                1
+              ),
             ]),
           ])
         }),
@@ -2851,18 +2889,7 @@ var render = function () {
     ]),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-body" }, [
-      _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
-        _vm._v("Vai al post"),
-      ]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -3021,18 +3048,13 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _c("h1", [_vm._v(_vm._s(_vm.post.title))]),
+    _vm._v(" "),
+    _c("p", [_vm._v(_vm._s(_vm.post.content))]),
+  ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("h1", [_vm._v("Dettagli del post")]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
