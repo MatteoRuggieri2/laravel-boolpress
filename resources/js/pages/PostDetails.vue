@@ -33,6 +33,10 @@ export default {
         };
     },
     methods: {
+
+        // Questa funzione ha il compito di effettuare una chiamata API
+        // al caricamento della pagina per prendere il singolo post e i relativi dati.
+        // Per funzionare prende automaticamente da '$route' lo slug della pagina corrente.
         getPost() {
             axios.get('/api/posts/' + this.$route.params.slug)
             .then((response) => {

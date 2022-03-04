@@ -11,7 +11,11 @@
                 <div class="card mb-5">
                     {{-- <img src="..." class="card-img-top" alt="..."> --}}
                     <div class="card-body">
+
+                        {{-- Card Title --}}
                         <h5 class="card-title">{{ $post->title }}</h5>
+
+                        {{-- Card Content --}}
                         <p class="card-text">
                             @if ( strlen($post->content) > 120)
                                 {{ Str::substr($post->content, 0, 120) }}...
@@ -19,6 +23,8 @@
                                 {{ $post->content }}
                             @endif
                         </p>
+
+                        {{-- Btn --}}
                         <a href="{{ route('admin.posts.show', ['post' => $post->id]) }}" class="btn btn-primary">Vai al post</a>
                     </div>
                 </div>
@@ -28,6 +34,7 @@
             <span>Non sono presenti post</span>
         @endforelse
 
+        {{-- Pagination Buttons --}}
         {{ $posts->links() }}
 
     </div>

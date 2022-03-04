@@ -64,6 +64,7 @@
             <textarea class="form-control" name="content" id="content" placeholder="Content" cols="30" rows="10">{{ old('content', $post->content) }}</textarea>
         </div>
         
+        {{-- Save Btn --}}
         <button type="submit" class="btn btn-primary">Salva le modifiche</button>
     </form>
 

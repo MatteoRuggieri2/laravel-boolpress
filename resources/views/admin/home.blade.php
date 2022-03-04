@@ -2,6 +2,7 @@
 
 @section('content')
     
+    {{-- Dashboard --}}
     <h1>Benvenuto {{ $user->name }} nella dashboard</h1>
     
     @if ($userInfo)

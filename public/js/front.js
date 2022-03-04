@@ -2187,6 +2187,9 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    // Questa funzione ha il compito di effettuare una chiamata API
+    // al caricamento della pagina per prendere il singolo post e i relativi dati.
+    // Per funzionare prende automaticamente da '$route' lo slug della pagina corrente.
     getPost: function getPost() {
       var _this = this;
 
@@ -2218,6 +2221,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Header_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Header.vue */ "./resources/js/components/Header.vue");
+//
+//
 //
 //
 //
