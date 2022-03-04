@@ -2166,6 +2166,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'PostDetails',
   data: function data() {
@@ -3053,36 +3066,38 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("h1", [_vm._v(_vm._s(_vm.post.title))]),
-    _vm._v(" "),
-    _vm.post.category
-      ? _c("h3", [_vm._v("Categoria: " + _vm._s(_vm.post.category.name))])
-      : _vm._e(),
-    _vm._v(" "),
-    _vm.post.tags.length > 0
-      ? _c(
-          "h5",
-          [
-            _c("span", [_vm._v("Tags: ")]),
-            _vm._v(" "),
-            _vm._l(_vm.post.tags, function (tag) {
-              return _c(
-                "a",
-                {
-                  key: tag.id,
-                  staticClass: "badge rounded-pill bg-light text-dark",
-                  attrs: { href: "#" },
-                },
-                [_vm._v(_vm._s(tag.name))]
-              )
-            }),
-          ],
-          2
-        )
-      : _vm._e(),
-    _vm._v(" "),
-    _c("p", [_vm._v(_vm._s(_vm.post.content))]),
+  return _c("section", [
+    _c("div", { staticClass: "container" }, [
+      _c("h1", [_vm._v(_vm._s(_vm.post.title))]),
+      _vm._v(" "),
+      _vm.post.category
+        ? _c("h3", [_vm._v("Categoria: " + _vm._s(_vm.post.category.name))])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.post.tags.length > 0
+        ? _c(
+            "h5",
+            [
+              _c("span", [_vm._v("Tags: ")]),
+              _vm._v(" "),
+              _vm._l(_vm.post.tags, function (tag) {
+                return _c(
+                  "a",
+                  {
+                    key: tag.id,
+                    staticClass: "badge rounded-pill bg-light text-dark",
+                    attrs: { href: "#" },
+                  },
+                  [_vm._v(_vm._s(tag.name))]
+                )
+              }),
+            ],
+            2
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.post.content))]),
+    ]),
   ])
 }
 var staticRenderFns = []
