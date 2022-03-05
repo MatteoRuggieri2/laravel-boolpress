@@ -33,6 +33,10 @@ export default {
                 {
                     name: 'blog',
                     label: 'Blog'
+                },
+                {
+                    name: 'tags',
+                    label: 'Tutti i tag'
                 }
             ]
         }
