@@ -12,7 +12,12 @@
             <!-- Tag badges -->
             <h5 v-if="post.tags && post.tags.length > 0">
                 <span>Tags: </span>
-                <a v-for="tag in post.tags" :key="tag.id" href="#" class="badge rounded-pill bg-light text-dark">{{ tag.name }}</a>
+                <router-link v-for="tag in post.tags" :key="tag.id" 
+                    :to="{ name: 'tag-details', params: { slug: tag.slug } }" 
+                    class="badge rounded-pill bg-light text-dark"
+                >
+                    {{ tag.name }}
+                </router-link>
             </h5>
 
             <!-- Content -->

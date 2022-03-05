@@ -21,3 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Posts API Endpoints
 Route::get('/posts', 'Api\PostController@index');
 Route::get('/posts/{slug}', 'Api\PostController@show');
+
+// Tags API Endpoints
+
+Route::get('/tags/{slug}', 'Api\TagController@show');
