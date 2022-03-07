@@ -58,7 +58,7 @@ class PostController extends Controller
 
         // Save Cover Img
         if (isset($form_data['image'])) {
-            
+
             // 1- Salvo l'immagine caricata nella cartella di Storage
             $img_path = Storage::put('post_covers', $form_data['image']);
 
@@ -128,6 +128,22 @@ class PostController extends Controller
             $form_data['slug'] = $this->getUniqueSlugFromTitle($form_data['title']);
         }
 
+        // // Update dell'immagine
+        if($form_data['image']) {
+
+            // Cancello l'immagine precedente
+            if ($post_to_update->cover) {
+                Storage::delete($post_to_update->cover);
+            }
+
+            // 1- Salvo l'immagine caricata nella cartella di Storage
+            $img_path = Storage::put('post_covers', $form_data['image']);
+
+            // 2- Salvo il path dell'immagine nella colonna cover del database
+            $form_data['cover'] = $img_path;
+
+        }
+
         $post_to_update->update($form_data);
 
         // Se la chiave tags è presente li aggiorno,
@@ -151,6 +167,12 @@ class PostController extends Controller
     {
         $post_to_delete = Post::findOrFail($id);
         $post_to_delete->tags()->sync([]);
+        
+        // Se ha un'immagine la cancello
+        if ($post_to_delete->cover) {
+            Storage::delete($post_to_delete->cover);
+        }
+
         $post_to_delete->delete();
 
         return redirect()->route('admin.posts.index');

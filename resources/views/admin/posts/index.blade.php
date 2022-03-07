@@ -9,7 +9,11 @@
             {{-- Single Post --}}
             <div class="col">
                 <div class="card mb-5">
-                    {{-- <img src="..." class="card-img-top" alt="..."> --}}
+                    @if ($post->cover)
+                        <img src="{{ asset('storage/' . $post->cover) }}" class="card-img-top" alt="{{ $post->title }}">
+                    @else
+                        <span>Immagine non presente</span>
+                    @endif
                     <div class="card-body">
 
                         {{-- Card Title --}}
