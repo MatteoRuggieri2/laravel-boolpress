@@ -10,7 +10,7 @@
                 <div v-for="post in posts" :key="post.id" class="col">
                     
                     <div class="card mb-4">
-                        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                        <img v-if="post.cover" class="card-img-top" :src="post.cover" :alt="post.title">
                         <div class="card-body">
                             <h5 class="card-title">{{ post.title }}</h5>
                             <p class="card-text">{{ stringTroncate(post.content, 110) }}</p>

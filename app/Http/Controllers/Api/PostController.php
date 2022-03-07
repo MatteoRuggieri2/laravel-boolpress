@@ -12,6 +12,13 @@ class PostController extends Controller
         
         $posts = Post::paginate(9);
 
+        // Trasformo il path cover in un url assoluto
+        foreach($posts as $post) {
+            if($post->cover) {
+                $post->cover = url('storage/' . $post->cover);
+            }
+        }
+
         $response = [
             'success' => true,
             'results' => $posts
@@ -22,6 +29,11 @@ class PostController extends Controller
 
     public function show($slug) {
         $post = Post::where('slug', '=', $slug)->with('category', 'tags')->first();
+
+        // Trasformo il path cover in un url assoluto
+        if($post->cover) {
+            $post->cover = url('storage/' . $post->cover);
+        }
         
         if ($post) {
 
