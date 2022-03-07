@@ -8,6 +8,7 @@ use App\Post;
 use App\Category;
 use App\Tag;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -54,6 +55,16 @@ class PostController extends Controller
 
         // Creo uno slug univoco
         $new_post->slug = $this->getUniqueSlugFromTitle($new_post->title);
+
+        // Save Cover Img
+        if (isset($form_data['image'])) {
+            
+            // 1- Salvo l'immagine caricata nella cartella di Storage
+            $img_path = Storage::put('post_covers', $form_data['image']);
+
+            // 2- Salvo il path dell'immagine nella colonna cover del database
+            $new_post->cover = $img_path;
+        }
 
         $new_post->save();
 

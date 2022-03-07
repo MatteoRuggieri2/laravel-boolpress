@@ -14,7 +14,7 @@
     @endif
     
     {{-- Form --}}
-    <form action="{{ route('admin.posts.store') }}" method="post">
+    <form action="{{ route('admin.posts.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('POST')
 
@@ -44,6 +44,12 @@
                     <label class="form-check-label" for="tag-{{ $tag->id }}">{{ $tag->name }}</label>
                 </div>
             @endforeach
+        </div>
+
+        {{-- Cover --}}
+        <div class="mb-3">
+            <label for="image" class="form-label">Cover</label>
+            <input class="form-control" type="file" id="image" name="image">
         </div>
 
         {{-- Content --}}
