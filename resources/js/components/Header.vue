@@ -28,11 +28,15 @@ export default {
                 },
                 {
                     name: 'about',
-                    label: 'About'
+                    label: 'Chi siamo'
                 },
                 {
                     name: 'blog',
                     label: 'Blog'
+                },
+                {
+                    name: 'contacts',
+                    label: 'Contattaci'
                 },
                 {
                     name: 'tags',

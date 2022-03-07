@@ -25,3 +25,6 @@ Route::get('/posts/{slug}', 'Api\PostController@show');
 // Tags API Endpoints
 Route::get('/tags', 'Api\TagController@index');
 Route::get('/tags/{slug}', 'Api\TagController@show');
+
+// Contacts API Endpoints
+Route::post('/contacts', 'Api\LeadController@store');
