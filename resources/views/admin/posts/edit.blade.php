@@ -63,6 +63,13 @@
             <label for="image" class="form-label">Cover</label>
             <input class="form-control" type="file" id="image" name="image">
         </div>
+        <div>Immagine precedente:
+            @if ($post->cover)
+                <img class="preview-image" src="{{ asset('storage/' . $post->cover) }}" alt="{{ $post->title }}">
+            @else
+                Nessuna
+            @endif
+        </div>
 
         {{-- Content --}}
         <div class="mb-3">

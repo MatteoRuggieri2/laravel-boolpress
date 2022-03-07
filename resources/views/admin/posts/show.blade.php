@@ -12,6 +12,12 @@
             {{-- Slug --}}
             <h4 class="card-subtitle mb-2 text-muted">Slug: {{ $post->slug }}</h4>
 
+            @if ($post->cover)
+                <img class="w-50 mb-5" src="{{ asset('storage/' . $post->cover) }}" class="card-img-top" alt="{{ $post->title }}">
+            @else
+                <span>Immagine non presente</span>
+            @endif
+
             {{-- Category --}}
             <h5 class="card-subtitle mb-2 text-muted">Categoria: {{ $post->category ? $post->category->name : 'nessuna' }}</h5>
 
