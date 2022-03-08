@@ -2013,6 +2013,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Posts',
   data: function data() {
@@ -3039,10 +3040,12 @@ var render = function () {
             _c("div", { staticClass: "card mb-4" }, [
               post.cover
                 ? _c("img", {
-                    staticClass: "card-img-top",
+                    staticClass: "card-img-top cover-img",
                     attrs: { src: post.cover, alt: post.title },
                   })
-                : _vm._e(),
+                : _c("div", { staticClass: "cover-not-found cover-img" }, [
+                    _vm._v(_vm._s(post.title)),
+                  ]),
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
                 _c("h5", { staticClass: "card-title" }, [

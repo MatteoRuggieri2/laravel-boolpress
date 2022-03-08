@@ -7,6 +7,26 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+
+// Immagine di preview nell'edit
 .preview-image {
     max-width: 20vW;
+}
+
+// Card Cover Img
+.cover-img {
+    height: 30vh;
+    // height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cover-not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: lightgray;
+    font-size: 24px;
+    padding: 20px;
 }

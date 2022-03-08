@@ -10966,3 +10966,21 @@ a.text-dark:focus {
   max-width: 20vW;
 }
 
+.cover-img {
+  height: 30vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.cover-not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: lightgray;
+  font-size: 24px;
+  padding: 20px;
+}
+
