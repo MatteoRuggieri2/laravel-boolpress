@@ -10,6 +10,7 @@ use App\Tag;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use App\Mail\NewPostAdminNotification;
+use App\Mail\PostDeletedAdminNotification;
 use Illuminate\Support\Facades\Mail;
 
 class PostController extends Controller
@@ -178,7 +179,15 @@ class PostController extends Controller
             Storage::delete($post_to_delete->cover);
         }
 
+        // Mi salvo il titolo del post elimninato, che userò 
+        // nella email da inviare all'editor/proprietario.
+        $deleted_post_title = $post_to_delete->title;
+        // dd($deleted_post_title);
+
         $post_to_delete->delete();
+
+        // Una volta eliminato il post, invio una mail al proprietario/editore del sito
+        Mail::to('editor@boolpress.it')->send(new PostDeletedAdminNotification($deleted_post_title));
 
         return redirect()->route('admin.posts.index');
     }
