@@ -16,7 +16,7 @@ class TagController extends Controller
         }
 
         $response = [
-            'sucsess' => true,
+            'success' => true,
             'results' => $tags
         ];
 
@@ -29,14 +29,14 @@ class TagController extends Controller
         if($tag) {
 
             $response = [
-                'sucsess' => true,
+                'success' => true,
                 'results' => $tag
             ];
 
         } else {
 
             $response = [
-                'sucsess' => false,
+                'success' => false,
                 'results' => []
             ];
 

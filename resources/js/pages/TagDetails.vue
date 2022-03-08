@@ -44,7 +44,7 @@ export default {
             axios.get('/api/tags/' + this.$route.params.slug)
             .then((response) => {
                 
-                if(response.data.sucsess) {
+                if(response.data.success) {
                     this.tag = response.data.results;
                 } else {
                     this.$router.push({ name: 'not-found' });

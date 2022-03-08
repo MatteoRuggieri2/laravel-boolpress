@@ -30,7 +30,7 @@ export default {
             axios.get('/api/tags')
             .then((response) => {
                 
-                if (response.data.sucsess) {
+                if (response.data.success) {
                     this.tags = response.data.results;
                 } else {
                     this.$router.push({ name: 'not-found' })

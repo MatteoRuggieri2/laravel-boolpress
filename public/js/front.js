@@ -2151,22 +2151,53 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Contacts',
   data: function data() {
     return {
       name: '',
       email: '',
-      message: ''
+      message: '',
+      success: false,
+      errors: {}
     };
   },
   methods: {
     sendMessage: function sendMessage() {
+      var _this = this;
+
       axios.post('/api/leads/store', {
         name: this.name,
         email: this.email,
         message: this.message
-      }).then(function (response) {});
+      }).then(function (response) {
+        // Se il form viene inviato correttamente, svuoto tutti
+        // i campi, altrimenti mostro i messaggi di errore
+        if (response.data.success) {
+          _this.name = '', _this.email = '', _this.message = '', _this.success = true;
+          _this.errors = {};
+        } else {
+          _this.success = false, _this.errors = response.data.errors;
+        }
+      });
     }
   }
 });
@@ -2341,7 +2372,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get('/api/tags/' + this.$route.params.slug).then(function (response) {
-        if (response.data.sucsess) {
+        if (response.data.success) {
           _this.tag = response.data.results;
         } else {
           _this.$router.push({
@@ -2398,7 +2429,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get('/api/tags').then(function (response) {
-        if (response.data.sucsess) {
+        if (response.data.success) {
           _this.tags = response.data.results;
         } else {
           _this.$router.push({
@@ -3218,6 +3249,12 @@ var render = function () {
       _c("h1", [_vm._v("Contattaci")]),
       _vm._v(" "),
       _c("form", [
+        _vm.success
+          ? _c("span", { staticClass: "text-success" }, [
+              _vm._v("Il form è stato inviato con successo!"),
+            ])
+          : _vm._e(),
+        _vm._v(" "),
         _c("div", { staticClass: "mb-3" }, [
           _c("label", { staticClass: "form-label", attrs: { for: "name" } }, [
             _vm._v("Nome e Cognome"),
@@ -3244,6 +3281,19 @@ var render = function () {
               },
             },
           }),
+          _vm._v(" "),
+          _vm.errors.name
+            ? _c(
+                "div",
+                { staticClass: "text-danger" },
+                _vm._l(_vm.errors.name, function (error, index) {
+                  return _c("div", { key: index, staticClass: "text-danger" }, [
+                    _vm._v(_vm._s(error)),
+                  ])
+                }),
+                0
+              )
+            : _vm._e(),
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "mb-3" }, [
@@ -3272,6 +3322,19 @@ var render = function () {
               },
             },
           }),
+          _vm._v(" "),
+          _vm.errors.email
+            ? _c(
+                "div",
+                { staticClass: "text-danger" },
+                _vm._l(_vm.errors.email, function (error, index) {
+                  return _c("div", { key: index, staticClass: "text-danger" }, [
+                    _vm._v(_vm._s(error)),
+                  ])
+                }),
+                0
+              )
+            : _vm._e(),
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "mb-3" }, [
@@ -3302,6 +3365,19 @@ var render = function () {
               },
             },
           }),
+          _vm._v(" "),
+          _vm.errors.message
+            ? _c(
+                "div",
+                { staticClass: "text-danger" },
+                _vm._l(_vm.errors.message, function (error, index) {
+                  return _c("div", { key: index, staticClass: "text-danger" }, [
+                    _vm._v(_vm._s(error)),
+                  ])
+                }),
+                0
+              )
+            : _vm._e(),
         ]),
         _vm._v(" "),
         _c(
