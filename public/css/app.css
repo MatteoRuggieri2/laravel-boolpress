@@ -10984,3 +10984,9 @@ a.text-dark:focus {
   padding: 20px;
 }
 
+.post-details-img {
+  max-height: 60vh;
+  width: auto;
+  margin-bottom: 20px;
+}
+

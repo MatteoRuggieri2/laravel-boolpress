@@ -10,9 +10,9 @@
             <div class="col">
                 <div class="card mb-5">
                     @if ($post->cover)
-                        <img src="{{ asset('storage/' . $post->cover) }}" class="card-img-top" alt="{{ $post->title }}">
+                        <img src="{{ asset('storage/' . $post->cover) }}" class="card-img-top cover-img" alt="{{ $post->title }}">
                     @else
-                        <span>Immagine non presente</span>
+                        <div class="cover-not-found cover-img">{{ $post->title }}</div>
                     @endif
                     <div class="card-body">
 

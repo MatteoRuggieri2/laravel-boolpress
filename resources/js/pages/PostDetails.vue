@@ -8,6 +8,9 @@
 
             <!-- Category -->
             <h3 v-if="post.category">Categoria: {{ post.category.name }}</h3>
+
+            <!-- Img -->
+            <img v-if="post.cover" class="post-details-img" :src="post.cover" :alt="post.title">
             
             <!-- Tag badges -->
             <h5 v-if="post.tags && post.tags.length > 0">

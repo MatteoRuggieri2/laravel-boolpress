@@ -16,7 +16,6 @@
 // Card Cover Img
 .cover-img {
     height: 30vh;
-    // height: 100%;
     object-fit: cover;
     object-position: center;
 }
@@ -29,4 +28,10 @@
     background-color: lightgray;
     font-size: 24px;
     padding: 20px;
+}
+
+.post-details-img {
+    max-height: 60vh;
+    width: auto;
+    margin-bottom: 20px;
 }
