@@ -2178,13 +2178,18 @@ __webpack_require__.r(__webpack_exports__);
       email: '',
       message: '',
       success: false,
-      errors: {}
+      errors: {},
+      disabled: false
     };
   },
   methods: {
     sendMessage: function sendMessage() {
       var _this = this;
 
+      // Quando invio la mail disabilito il bottone per 
+      // evitare spam e quindi l'invio di più email uguali.
+      // quando sarà inviata correttaminte il bottone tornerà cliccabile.
+      this.disabled = true;
       axios.post('/api/leads/store', {
         name: this.name,
         email: this.email,
@@ -2197,7 +2202,10 @@ __webpack_require__.r(__webpack_exports__);
           _this.errors = {};
         } else {
           _this.success = false, _this.errors = response.data.errors;
-        }
+        } // Quando ho terminato l'invio della email, il bottone torna cliccabile
+
+
+        _this.disabled = false;
       });
     }
   }
@@ -3390,7 +3398,7 @@ var render = function () {
           "button",
           {
             staticClass: "btn btn-primary",
-            attrs: { type: "submit" },
+            attrs: { disabled: _vm.disabled, type: "submit" },
             on: {
               click: function ($event) {
                 $event.preventDefault()

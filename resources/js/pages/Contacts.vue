@@ -43,7 +43,7 @@
                 </div>
 
                 <!-- Submit -->
-                <button type="submit" @click.prevent="sendMessage()" class="btn btn-primary">Invia email</button>
+                <button :disabled="disabled" type="submit" @click.prevent="sendMessage()" class="btn btn-primary">Invia email</button>
             </form>
 
         </div>
@@ -59,11 +59,17 @@ export default {
             email: '',
             message: '',
             success: false,
-            errors: {}
+            errors: {},
+            disabled: false
         }
     },
     methods: {
         sendMessage: function() {
+
+            // Quando invio la mail disabilito il bottone per 
+            // evitare spam e quindi l'invio di più email uguali.
+            // quando sarà inviata correttaminte il bottone tornerà cliccabile.
+            this.disabled = true;
             axios.post('/api/leads/store', {
                 name: this.name,
                 email: this.email,
@@ -83,6 +89,10 @@ export default {
                     this.success = false,
                     this.errors = response.data.errors
                 }
+
+                // Quando ho terminato l'invio della email, il bottone torna cliccabile
+                this.disabled = false;
+
             });
         }
     }
