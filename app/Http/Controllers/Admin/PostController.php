@@ -135,7 +135,7 @@ class PostController extends Controller
         }
 
         // // Update dell'immagine
-        if($form_data['image']) {
+        if(array_key_exists('image', $form_data)) {
 
             // Cancello l'immagine precedente
             if ($post_to_update->cover) {
